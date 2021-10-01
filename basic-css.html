@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic CSS Properties</title>
+    <style>
+      body {
+        color: #bedcfe;
+        background: #2f4b26;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+      }
+      a {
+        text-decoration: none;
+        color: #bedcfe;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="max-width: 500px; border: 1px solid #bedcfe; padding: 12px">
+      <h1>Basic CSS Properties</h1>
+      <p>
+        Note: This is for demonstration purpose only for some css properties. You should use classes
+        for css styling and avoid in-line styles.
+      </p>
+      <p>
+        Disclaimer: In CSS, there're many approaches that you can use to achieve the same effect.
+        The demos here are using one way which is flex due to my personal preference (cuz it's
+        easier). If you are familiar with other css properties, feel free to continue using them.
+      </p>
+      <h2>Case 1: Evenly Spacing using Flex</h2>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          padding: 12px;
+          border-radius: 12px;
+          background-color: #85bda6;
+        "
+      >
+        <a href="#">One</a>
+        <a href="#">Two</a>
+        <a href="#">Three</a>
+        <a href="#">Four</a>
+      </div>
+      <p>
+        space-between means all child items under this container will be spaced out evenly (have the
+        same spacing between each other), while the first and the last child items will be on the
+        edge of this container.
+      </p>
+      <hr />
+      <h2>Case 2: Horizontal Alignment for Multiple Item Groups using Flex</h2>
+      <div style="display: flex; flex-direction: row">
+        <div style="border-right: 1px solid #bedcfe; padding-right: 20px; margin-right: 10px">
+          Group 1
+          <p>Some content here</p>
+        </div>
+        <div>
+          Group 2
+          <p>vertial alignment 1</p>
+          <p>vertial alignment 2</p>
+        </div>
+      </div>
+      <hr />
+      <h2>Case 3: Margin or Padding?</h2>
+      <p>
+        All items have the same layout by default: margin -> border -> padding -> content of this
+        item
+      </p>
+      <p>
+        Basically, it means that if you want spacing <b>inside</b> of a visible border, use Padding,
+        otherwise, use Margin.
+      </p>
+      <p>
+        Sometimes the padding spacing will not be visible if there's no space left for padding
+        (e.g., when you speficy width / height in pixels while there're too much content in the
+        container). In that case, use Margin instead as Margin will never be "covered" or "squeezed"
+        by content.
+      </p>
+    </div>
+  </body>
+</html>
