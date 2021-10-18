@@ -105,7 +105,7 @@ const NavSideBar = ({link}) => {
     return (
         <div>
             {navlinks.map(navlink => 
-                    <a class=`list-group-item list-group-item-action ${link === navlink.link? "active" : ""}` href=${navlink.link}>
+                    <a class=`list-group-item list-group-item-action ${activeLink === navlink.link? "active" : ""}` href=${navlink.link}>
                      <i class=${navlink.iconClass}></i>
                         <div class="d-inline-block">
                             <div class="d-sm-none d-xl-block">${navlink.text}</div>
