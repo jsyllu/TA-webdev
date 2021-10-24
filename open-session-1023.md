@@ -64,14 +64,19 @@ Follow the following steps to refactor the navigation links to previous assignme
 + ONLY appear at the entry point of your webapp which is `/` 
 + being removed from every other page
 
-Note: You should NOT add any additional content in `index.html` unless you know what you're doing!
+#### Note
+
++ You should NOT add any additional content in `index.html` unless you know what you're doing!
++ Good practice: Each page should only have one <h1> tag unless you have a reason to use multiple <h1>. All other heading tags should follow a logical hierarchical order. 
+  + By doing this, your website will have better accessibility and SEO (search engine optimization).
+  + If you're interested in learning more about Accessibility, watch this video:  [Importance of HTML Headings for Accessibility](https://www.youtube.com/watch?v=AmUPhEVWu_E)
 
 ```javascript
 // go to src/components/a6/HelloWorld.js -> This is the entry pooint of your app
 
 import React from "react";
 import A6 from "./index";
-import History from "../../history";
+import History from "../history";
 
 const HelloWorld = () => {
   return (
@@ -98,6 +103,9 @@ const A6 = () => {
   return (
       <>
         <h2>Assignment 6</h2>
+        <Link to="/a6/hello">
+          Hello
+        </Link> | &nbsp;
         <Link to="/a6/practice">
           Practice
         </Link> | &nbsp;
@@ -124,37 +132,36 @@ const History = () => {
         <h2>Non React.js Assignments</h2>
         <h3>Assignment 2</h3>
         <ul>
-          <li><a href="a2/practice/index.html">HTML Practice</a></li>
-          <li><a href="a2/twitter/navigation.html">Twitter clone</a></li>
-          <li><a href="a2/practice/iframe/index.html">Iframes</a></li>
+          <li><a href="/a2/practice/index.html">HTML Practice</a></li>
+          <li><a href="/a2/twitter/navigation.html">Twitter clone</a></li>
+          <li><a href="/a2/practice/iframe/index.html">Iframes</a></li>
         </ul>
         <h3>Assignment 3</h3>
         <ul>
-          <li><a href="a3/practice/css/index.html">CSS Practice</a></li>
-          <li><a href="a3/twitter/navigation.html">Twitter clone</a></li>
-          <li><a href="a3/twitter/explore/explore.html">explore.html</a></li>
-          <li><a href="a3/challenge/index.html">CSS Challenge</a></li>
+          <li><a href="/a3/practice/css/index.html">CSS Practice</a></li>
+          <li><a href="/a3/twitter/navigation.html">Twitter clone</a></li>
+          <li><a href="/a3/twitter/explore/explore.html">explore.html</a></li>
+          <li><a href="/a3/challenge/index.html">CSS Challenge</a></li>
         </ul>
 <h3>Assignment 4</h3>
         <ul>
-          <li><a href="a4/practice/bootstrap/index.html">Bootstrap Practice</a></li>
-          <li><a href="a4/twitter/navigation.html">Twitter clone</a></li>
-          <li><a href="a4/twitter/explore/explore.html">explore.html</a></li>
-          <li><a href="a4/challenge/explore/explore.html">Boostrap Challenge</a></li>
+          <li><a href="/a4/practice/bootstrap/index.html">Bootstrap Practice</a></li>
+          <li><a href="/a4/twitter/navigation.html">Twitter clone</a></li>
+          <li><a href="/a4/twitter/explore/explore.html">explore.html</a></li>
+          <li><a href="/a4/challenge/explore/explore.html">Boostrap Challenge</a></li>
         </ul>
         <h3>Assignment 5</h3>
         <ul>
-          <li><a href="a5/practice/js/index.html">JavaScript & Console Practice</a></li>
-          <li><a href="a5/practice/todos/index.html">ToDoList Practice</a></li>
-          <li><a href="a5/build/ExploreScreen/explore.html">A5 Practice ExploreScreen</a></li>
-          <li><a href="a5/a5Challenge/HomeScreen/index.html">A5 Challenge HomeScreen</a></li>
+          <li><a href="/a5/practice/js/index.html">JavaScript & Console Practice</a></li>
+          <li><a href="/a5/practice/todos/index.html">ToDoList Practice</a></li>
+          <li><a href="/a5/build/ExploreScreen/explore.html">A5 Practice ExploreScreen</a></li>
+          <li><a href="/a5/challenge/HomeScreen/index.html">A5 Challenge HomeScreen</a></li>
         </ul>
       </div>
   )
 }
 
 export default History;
-
 ```
 
 ```javascript
@@ -182,5 +189,41 @@ export default History;
     <div id="root"></div>
 </body>
 </html>
+```
+
+```javascript
+// go to src/App.js
+
+// import whatever resources you will need
+
+import {BrowserRouter, Route} from "react-router-dom";
+import HelloWorld from "./components/a6/HelloWorld";
+import Practice from "./components/a6/Practice/Practice";
+import Build from "./components/a6/Build/Build";
+import Challenge from "./components/a6/Challenge/Challenge";
+
+function App() {
+  return (
+      <BrowserRouter>
+        <div className="container">
+          <Route path={["/", "/a6", "/a6/hello"]} exact={true}>
+            <HelloWorld/>
+          </Route>
+          <Route path="/a6/practice" exact={true}>
+            <A6/>
+            <Practice/>
+          </Route>
+          <Route path="/a6/twitter/explore" exact={true}>
+            <Build/>
+          </Route>
+          <Route path="/a6/twitter/home" exact={true}>
+            <Challenge/>
+          </Route>
+        </div>
+      </BrowserRouter>
+  );
+}
+
+export default App;
 ```
 
