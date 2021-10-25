@@ -67,7 +67,7 @@ Follow the following steps to refactor the navigation links to previous assignme
 #### Note
 
 + You should NOT add any additional content in `index.html` unless you know what you're doing!
-+ Good practice: Each page should only have one <h1> tag unless you have a reason to use multiple <h1>. All other heading tags should follow a logical hierarchical order. 
++ Good practice: Each page should only have one \<h1> tag unless you have a reason to use multiple \<h1>. All other heading tags should follow a logical hierarchical order. 
   + By doing this, your website will have better accessibility and SEO (search engine optimization).
   + If you're interested in learning more about Accessibility, watch this video:  [Importance of HTML Headings for Accessibility](https://www.youtube.com/watch?v=AmUPhEVWu_E)
 
