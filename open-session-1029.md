@@ -10,7 +10,9 @@ Date: 10/29/2021
 // post.json
 
 posts = [
-	{"comment": "Amazing show about <a href='#' style='color: lightblue;' class='wd-no-decor wd-bluetxt'>@Inspiration4x</a> mission!"}
+	{
+        "comment": "Amazing show about <a href='#' style='color: lightblue;' class='wd-no-decor wd-bluetxt'>@Inspiration4x</a> mission!"
+    }
 ]
 ```
 

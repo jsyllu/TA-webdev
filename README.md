@@ -41,4 +41,12 @@ Term: 2021 Fall
 
 ### Open Session on 10/29 - [open-session-1029.md]( https://github.com/jsyllu/TA-webdev/blob/master/open-session-1029.md)
 
-+ To be updated.
++ How insert html string from a JSON file into React component (.JS file)?
+
+### Open Session on 11/19 - [open-session-1119.md]( https://github.com/jsyllu/TA-webdev/blob/master/open-session-1119.md)
+
++ Separate Front-end and Back-end 
++ Netlify vs Heroku
++ How does Netlify React App communicate with Heroku Node App?
++ Heroku Deploy Troubleshoot: Build Success but still Application Error
++ What is `useEffect` in React and How to use it?
